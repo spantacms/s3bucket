@@ -56,7 +56,7 @@ resource "aws_s3_bucket_logging" "my_bucket_logging" {
 # Enable default Server Side Encryption
 ##########################################
 resource "aws_s3_bucket_server_side_encryption_configuration" "my_bucket_server_side_encryption" {
-  count  = var.bucketonoff ? 1 : 0
+  count  = var.kmskeyonoff ? 1 : 0
   bucket = aws_s3_bucket.my_bucket[0].bucket
 
   rule {
